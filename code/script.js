@@ -13,6 +13,24 @@ let originalHeight = 0;
 let currentWidth = 0;
 let currentHeight = 0;
 
+window.addEventListener('load', async () => {
+  const initial_img = new Image();
+  initial_img.src = 'https://via.placeholder.com/400x400';
+
+  await initial_img.decode();
+  outputCanvas.width = initial_img.width;
+  outputCanvas.height = initial_img.height;
+  const ctx = outputCanvas.getContext('2d');
+  ctx.drawImage(initial_img, 0, 0);
+  originalWidth = initial_img.width;
+  originalHeight = initial_img.height;
+  currentWidth = originalWidth;
+  currentHeight = originalHeight;
+  widthInput.value = originalWidth;
+  heightInput.value = originalHeight;
+});
+
+
 imageInput.addEventListener('change', async (event) => {
   const image = event.target.files[0];
   const imageData = await readImage(image);
@@ -84,6 +102,9 @@ function resizeImage(canvas, width, height, smooth) {
   const ctx = tmpCanvas.getContext('2d');
   if (smooth) {
     ctx.imageSmoothingEnabled = true;
+    ctx.webkitImageSmoothingEnabled =true;
+    ctx.mozImageSmoothingEnabled = true;
+    ctx.msImageSmoothingEnabled = true;
     ctx.drawImage(canvas, 0, 0, width, height);
   } else {
     ctx.imageSmoothingEnabled = false;
