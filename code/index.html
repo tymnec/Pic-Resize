@@ -8,43 +8,67 @@
 </head>
 
 <body>
-  <div
-    class="text-center mx-10 my-10 py-10 bg-gradient-to-r from-red-500 to-pink-400 rounded-full text-white text-7xl shadow-2xl shadow-red-300 select-none max-w-md">
-    <p>PicResize</p>
-    
+  <div class="flex flex-box flex-row justify-center">
+    <p
+      class="text-center mx-20 mt-10 mb-10 py-10 px-32 bg-gradient-to-r from-red-500 to-pink-400 rounded-full text-white text-7xl shadow-2xl shadow-red-300 select-none ">
+      Pic Resize
+    </p>
   </div>
 
-  <div class="text-center bg-gray-100 mx-10 my-20 pt-20 pb-10 px-10 shadow-2xl rounded-2xl hover:shadow-red-300 transition duration-700 ease-in-out">
-    <div class="bg-slate-200 rounded-2xl py-10 shadow-lg hover:shadow-red-300 hover:scale-125 mx-32 transition duration-700 ease-in-out">
-      <input type="file" id="image-input" class="rounded-2xl px-4 py-4 bg-slate-600 text-white hover:scale-150 transition duration-700 ease-in-out hover:shadow-2xl hover:shadow-red-300">
+  <div
+    class="text-center bg-gray-100 mx-10 my-20 pt-20 pb-10 px-10 shadow-2xl rounded-2xl hover:shadow-red-300 transition duration-700 ease-in-out">
+    <div class="flex flex-row justify-center">
+      <div class="flex flex-row place-items-center">
+        <div
+          class="px-10 bg-slate-200 rounded-2xl py-10 shadow-lg hover:shadow-red-300 hover:scale-125 mx-10 transition duration-700 ease-in-out">
+          <input type="file" id="image-input"
+            class="rounded-2xl px-4 py-4 bg-slate-600 text-white hover:scale-150 transition duration-700 ease-in-out hover:shadow-2xl hover:shadow-red-300">
+        </div>
+        <div>
+          <div
+            class="px-10 bg-slate-200 rounded-2xl mx-10 py-20 shadow-lg hover:scale-125 hover:shadow-red-300 transition duration-700 ease-in-out">
+            <div class="flex flex-box flex-row">
+              <label for="width-input" class="px-5 font-light text-2xl">Width:</label>
+              <input type="number" id="width-input" value="100"
+                class="text-2xl rounded-2xl px-5 py-2 font-light hover:scale-150 hover:shadow-2xl transition duration-700 ease-in-out">
+              <br>
+              <br>
+              <label for="height-input" class="px-5 font-light text-2xl">Height:</label>
+              <input type="number" id="height-input" value="100"
+                class="text-2xl rounded-2xl px-5 py-2 font-light hover:scale-150 hover:shadow-2xl transition duration-700 ease-in-out">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <br>
     <br>
-    <div class=" bg-slate-200 rounded-2xl mx-32 py-20 shadow-lg hover:scale-125 hover:shadow-red-300 transition duration-700 ease-in-out">
-      <label for="width-input" class="px-5 font-light text-2xl">Width:</label>
-      <input type="number" id="width-input" value="100" class="text-2xl rounded-2xl px-5 py-2 font-light hover:scale-150 hover:shadow-2xl transition duration-700 ease-in-out">
+
+    <br>
+    <br>
+    <div class="flex flex-row justify-center space-x-5">
+      <div class="">
+        <button id="resize-button"
+          class="bg-slate-700 rounded-2xl py-5 px-5 shadow-2xl hover:shadow-red-300 hover:scale-125 text-3xl font-light hover:font-bold text-white transition duration-700 ease-in-out">Resize</button>
+      </div>
       <br>
       <br>
-      <label for="height-input" class="px-5 font-light text-2xl">Height:</label>
-      <input type="number" id="height-input" value="100" class="text-2xl rounded-2xl px-5 py-2 font-light hover:scale-150 hover:shadow-2xl transition duration-700 ease-in-out">
+      <div class="">
+        <button id="download-button"
+          class="bg-slate-700 rounded-2xl py-5 px-5 shadow-2xl hover:shadow-red-300 hover:scale-125 text-3xl font-light hover:font-bold text-white transition duration-700 ease-in-out">Download</button>
+      </div>
+      <br>
+      <br>
     </div>
-    <br>
-    <br>
-    <div>
-      <button id="resize-button" class="bg-slate-700 rounded-2xl py-5 px-5 shadow-2xl hover:shadow-red-300 hover:scale-125 mx-56 text-3xl font-light hover:font-bold text-white transition duration-700 ease-in-out">Resize</button>
-    </div>
-    <br>
-    <br>
-    <div>
-      <button id="download-button" class="bg-slate-700 rounded-2xl py-5 px-5 shadow-2xl hover:shadow-red-300 hover:scale-125 mx-56 text-3xl font-light hover:font-bold text-white transition duration-700 ease-in-out">Download</button>
-    </div>
+
 
   </div>
 
   <br>
   <br>
   <p class=" mx-32 text-3xl font-light select-none">Image</p>
-  <canvas id="output-canvas" class = "mx-20 mb-20 mt-5 bg-gradient-to-r from-slate-300 to-gray-200 hover:shadow-2xl transition duration-700 ease-in-out rounded-2xl px-10 py-10"></canvas>
+  <canvas id="output-canvas"
+    class="mx-20 mb-20 mt-5 bg-gradient-to-r from-slate-300 to-gray-200 hover:shadow-2xl transition duration-700 ease-in-out rounded-2xl px-10 py-10"></canvas>
 
   <br>
   <br>
