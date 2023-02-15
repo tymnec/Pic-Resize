@@ -59,23 +59,32 @@
       </div>
       <br>
       <br>
+      <div
+        class="flex flex-row px-10 bg-slate-200 rounded-2xl py-3 shadow-lg hover:shadow-red-300 hover:scale-125 mx-10 transition duration-700 ease-in-out">
+        <div class="flex flex-row text-3xl font-light mx-5 my-1">
+          <p class="mt-1 mr-3">Smoothing</p>
+          <input id="smoothing-checkbox"
+            class="scale-150 ml-5 mt-2 mr-10 bg-slate-700 rounded-2xl py-5 px-5 shadow-2xl hover:shadow-red-300 hover:scale-150 text-3xl font-light hover:font-bold text-white transition duration-700 ease-in-out"
+            type="checkbox"></input>
+        </div>
+        <br>
+        <br>
+        <div>
+          <button id="increase-button"
+            class="bg-slate-700 rounded-2xl mx-5 py-2 px-5 shadow-2xl hover:shadow-red-300 hover:scale-125 text-3xl font-light hover:font-bold text-white transition duration-700 ease-in-out">+</button>
+          <button id="decrease-button"
+            class="bg-slate-700 rounded-2xl mx-5 py-2 px-5 shadow-2xl hover:shadow-red-300 hover:scale-125 text-3xl font-light hover:font-bold text-white transition duration-700 ease-in-out">-</button>
+        </div>
+      </div>
+
     </div>
-
-
   </div>
 
-  <br>
   <br>
   <p class=" mx-32 text-3xl font-light select-none">Image</p>
   <canvas id="output-canvas"
     class="mx-20 mb-20 mt-5 bg-gradient-to-r from-slate-300 to-gray-200 hover:shadow-2xl transition duration-700 ease-in-out rounded-2xl px-10 py-10"></canvas>
-
   <br>
-  <br>
-  <label for="keep-ratio-input">Keep Ratio</label>
-  <input id="smoothing-checkbox" type="checkbox"></input>
-  <button id="increase-button">+</button>
-  <button id="decrease-button">-</button>
   <script type="text/javascript" src="script.js"></script>
 </body>
 
