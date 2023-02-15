@@ -13,9 +13,6 @@ let originalHeight = 0;
 let currentWidth = 0;
 let currentHeight = 0;
 
-const initial_img = new Image();
-initial_img.src = 'https://via.placeholder.com/400x400';
-
 imageInput.addEventListener('change', async (event) => {
   const image = event.target.files[0];
   const imageData = await readImage(image);
@@ -46,16 +43,16 @@ function handleResize() {
 function handleIncrease() {
   currentWidth *= 1.05;
   currentHeight *= 1.05;
-  widthInput.value = Math.round(currentWidth);
-  heightInput.value = Math.round(currentHeight);
+  widthInput.value = currentWidth;
+  heightInput.value = currentHeight;
   handleResize();
 }
 
 function handleDecrease() {
   currentWidth *= 0.95;
   currentHeight *= 0.95;
-  widthInput.value = Math.round(currentWidth);
-  heightInput.value = Math.round(currentHeight);
+  widthInput.value = currentWidth;
+  heightInput.value = currentHeight;
   handleResize();
 }
 
@@ -104,4 +101,3 @@ function resizeImage(canvas, width, height, smooth) {
 resizeButton.addEventListener('click', handleResize);
 increaseButton.addEventListener('click', handleIncrease);
 decreaseButton.addEventListener('click', handleDecrease);
-
