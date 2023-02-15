@@ -98,6 +98,15 @@ function resizeImage(canvas, width, height, smooth) {
   return ctx.getImageData(0, 0, width, height);
 }
 
+const downloadButton = document.querySelector('#download-button');
+
+downloadButton.addEventListener('click', () => {
+  const link = document.createElement('a');
+  link.download = 'resized-image.png';
+  link.href = outputCanvas.toDataURL();
+  link.click();
+});
+
 resizeButton.addEventListener('click', handleResize);
 increaseButton.addEventListener('click', handleIncrease);
 decreaseButton.addEventListener('click', handleDecrease);
